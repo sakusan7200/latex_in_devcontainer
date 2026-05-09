@@ -1,0 +1,47 @@
+{
+    "name": "my_docker_latex_env",
+    "image": "texlive/texlive:latest",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils": {
+            "upgradePackages": true
+        }
+    },
+    "mounts": [
+        {
+            "target": "${containerWorkspaceFolder}/aux",
+            "type": "volume"
+        }
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "James-Yu.latex-workshop"
+            ],
+            "settings": {
+                // latexmkによるビルドの設定
+                "latex-workshop.latex.tools": [
+                    {
+                        "name": "latexmk",
+                        "command": "latexmk",
+                        "args": [
+                            "-r",
+                            "%WORKSPACE_FOLDER%/.latexmkrc",
+                            "%DOC%"
+                        ]
+                    }
+                ],
+                "latex-workshop.latex.recipes": [
+                    {
+                        "name": "default",
+                        "tools": [
+                            "latexmk"
+                        ]
+                    }
+                ],
+                "latex-workshop.latex.clean.fileTypes": [
+                    "*.synctex.gz"
+                ]
+            }
+        }
+    }
+}

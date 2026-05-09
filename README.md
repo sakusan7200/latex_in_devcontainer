@@ -7,7 +7,7 @@
   * Windowsの場合はWSLにDockerを入れることをお勧めします
 
 ## 使い方
-[使い方](Qiitaのリンク.com)
+[使い方](https://qiita.com/kurikara_raaa/items/d5300aa9a4683aef368f)
 
 ## 既知の問題
  * doc.synctex.gzが消えない

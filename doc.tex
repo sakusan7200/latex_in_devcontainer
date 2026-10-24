@@ -6,6 +6,10 @@
 \usepackage{graphicx} % 画像用
 \usepackage{listings} % コードブロック用
 \usepackage{xcolor}   % コード色付け用
+\usepackage{amsmath}
+
+% インラインのコードブロック
+\newcommand{\code}[1]{\colorbox{gray!15}{\texttt{#1}}}
 
 % --- ハイパーリンクの設定 ---
 \hypersetup{
@@ -27,13 +31,23 @@
     captionpos=b
 }
 
+% --- コードブロック（listings）の設定(実行結果用) ---
+\lstdefinestyle{console}{
+    basicstyle=\ttfamily\small, % 等幅フォント・小さめ
+    breaklines=true,            % 長い行の自動折り返し
+    frame=single,               % 四角い枠線
+    backgroundcolor=\color{gray!10}, % 薄いグレーの背景
+    columns=fixed,              % 文字の幅を一定に保つ
+    basewidth=0.5em             % 文字の詰まり具合を調整
+}
+
 % --- 図表の設定 ---
 % 画像の検索パスを設定（必要に応じて）
 % \graphicspath{{./images/}}
 
 % --- 文書情報 ---
-\title{DevContainerで \LaTeX{} の環境構築}
-\author{倶利伽羅らら}
+\title{ここにタイトルを入力}
+\author{ここに名前を入力}
 \date{\today}
 
 \begin{document}

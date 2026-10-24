@@ -4,20 +4,28 @@
     "features": {
         "ghcr.io/devcontainers/features/common-utils": {
             "upgradePackages": true
-        }
+        },
+        "ghcr.io/devcontainers/features/node:1": {},
+        "ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
     },
     "mounts": [
         {
             "target": "${containerWorkspaceFolder}/aux_dir",
             "type": "volume"
+        },
+        {
+            "source": "claude-code-config",
+            "target": "/root/.claude",
+            "type": "volume"
         }
     ],
+    "containerEnv": {
+        "CLAUDE_CONFIG_DIR": "/root/.claude"
+    },
     "customizations": {
         "vscode": {
             "extensions": [
-                "James-Yu.latex-workshop",
-                "anthropic.claude-code"
-
+                "James-Yu.latex-workshop"
             ],
             "settings": {
                 // latexmkによるビルドの設定
